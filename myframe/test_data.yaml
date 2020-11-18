@@ -1,0 +1,18 @@
+data:
+  - selenium
+  - appium
+  - 自动化
+
+steps:
+  - driver:
+      browser: chrome
+  - get: https://ceshiren.com/
+  - find_element:
+      by: id
+      value: search-button
+  - click: [ ]
+  - find_element:
+      by: id
+      value: search-term
+  - send_keys: ${data}
+  - sleep: 1
