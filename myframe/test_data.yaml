@@ -4,8 +4,6 @@ data:
   - 自动化
 
 steps:
-  - driver:
-      browser: chrome
   - get: https://ceshiren.com/
   - find_element:
       by: id
@@ -15,4 +13,13 @@ steps:
       by: id
       value: search-term
   - send_keys: ${data}
+  - sleep: 1
+
+
+steplists:
+  - get: https://ceshiren.com/
+  - find_element: [ id, search-button ]
+  - click: [ ]
+  - find_element: [ id, search-term ]
+  - send_keys: [ "${data}" ]
   - sleep: 1
